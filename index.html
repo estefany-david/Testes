@@ -1,52 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Replica do codigo do Manu</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panificadora Mayte | Desenvolvido por Estefany Freitas David</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/food_cake_spoon_dessert_icon_263272.svg" type="image/x-icon">
-    
-    <link type="text/css" rel="stylesheet" href="styles.css">
-
-</head>
-<body>
-
-    <div class="bg-image"></div>
-    <div class="container">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+        <link rel="icon" href="assets/food_cake_spoon_dessert_icon_263272.svg" type="image/x-icon">
         
-        <div class="logo">
+        <link type="text/css" rel="stylesheet" href="styles.css">
+    </head>
 
-            <h1>Minhas Receitas</h1>
-            <p>Aqui só tem coisa boa!</p>
-            
-        </div>
-        
-        <form action="" method="post">
+    <body class="bg-image">
+        <main class="container">
+            <form action="" method="post" class="formulário">
+                <header>
+                    <h1>Minhas Receitas</h1>
+                    <p>Aqui só tem coisa boa!</p>
+                </header>
+                
+                <div class="campo-do-formulário">
+                    <label for="CPF"> CPF:</label>
+                    <input id="CPF" type="text" name="CPF" required placeholder="Informe seu cpf">
+                </div>
 
-            <p>
-                <label for="CPF"> CPF:</label>
-                <input id="CPF" type="text" name="CPF" required>
-            </p>
+                <div class="campo-do-formulário">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="Senha" placeholder="Informe sua senha">
+                </div>
 
-            <p>
-                <label for="senha"> Senha</label>
-                <input type="password" name="Senha">
-            </p>
-
-           <button class="button" type="submit">Enviar</button>
-
-        </form>
-        <footer>
-            <p>Esqueceu sua senha? <a href="">Recuperar senha</a></p>
-        </footer>
-
-        
-    
-        
-    </div>
-</body>
+                <div class="botão">
+                    <button type="submit">Entrar</button>
+                </div>
+                
+                <footer>
+                    <p>Esqueceu sua senha? <a href="">Recuperar senha</a></p>
+                </footer>
+            </form>
+        </main>
+    </body>
 </html>

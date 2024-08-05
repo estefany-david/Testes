@@ -1,3 +1,9 @@
+/* Aqui no root conseguimos definir variáveis e usar como cores, aí quando você quiser fazer um tema escuro fica mais fácil */
+:root{
+    --cor-principal: #7C623F;
+    --cor-de-contraste: #fff;
+    }
+
 *{
     box-sizing: border-box;
 }
@@ -7,47 +13,137 @@ html, body{
     margin: 0%;
 }
 
+body {
+    width: 100vw;
+    /* A medida vw é a largura da tela do usuário */
+    height: 100vh;
+    /* A medida vh é a altura da tela do usuário */
+}
+
+a{
+    text-decoration: underline;
+    color: var(--cor-de-contraste);
+}
+
 .bg-image{
-    background-image: url(assets/istockphoto-1359103879-170667a.jpg);
+    /* background-image: url(assets/istockphoto-1359103879-170667a.jpg); */
+    /* Troquei a imagem por outra que eu achei mais soft */
+    background-image: url(assets/new-background.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+    /* Aqui a gente vai deixar a imagem de fundo ocupando toda a tela, então vamos usar as medidas de largura e altura da tela do usuário, lembra que colocamos 100vh e vw no body? Pois é, como ele é pai desta div podemos usar 100% na largura e altura aqui para elas terem a mesma do pai. */
+    width: 100%;
     height: 100%;
-    filter: blur(5px);
+
+    /* Vamos colocar também o conteúdo do página ao centro, utilizando o flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
     
 .container{
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%,50%);
-    z-index: 2;
-    width: 45%;
-    padding: 40px 0;
+    /* position: absolute; */
+    /* top: 0%; */
+    /* left: 50%; */
+    /* -> Evita usar position absolute, pois ele tira o elemento do fluxo normal do documento */
+    
+    /* transform: translate(-50%,50%); */
+    /* z-index: 2; */
+    /* -> Evita usar z-index, pois ele pode causar problemas de sobreposição de elementos */
+    
+    /* width: 45%; */
+    /* padding: 40px 0; */
+    /* ->Vamos usar a div que cobre esta para alinha-la ao centro da tela ok! Por isso comentei o padding e a largura anterior */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.541);  
-    border-radius: 5%;
-     
+    width: 100%;
+    height: 50%;
+
 }
 
-.logo h1{
+.formulário{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+
+    border-radius: 24px;
+    background-color: var(--cor-principal);
+    color: var(--cor-de-contraste);
+}
+
+/* Você estava usando uma classe chamada logo, eu mudei para o header só pra você ver outra aplicação mesmo */
+header{
+    font-family: "Playwrite CU", cursive;
+}
+
+header h1{
     text-align: auto;
     margin: 0%;
-    font-family: "Playwrite CU", cursive;
     white-space: nowrap;
-    
 }
 
-.logo p{
+header p{
     text-align: center;
 }
 
-.button{
-    background: coral;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
+.campo-do-formulário{
+    width: 100%;
+    margin: 10px 0;
     padding: 10px;
+    border-radius: 24px;
+    border: none;
+}
+
+.campo-do-formulário input{
+    width: 70%;
+    padding: 10px;
+    border-radius: 24px;
+    border: none;
+}
+
+.botão{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.botão button{
+    background:  var(--cor-de-contraste);
+    border: none;
+    border-radius: 24px;
+    padding: 15px 35px;
+}
+
+@media screen and (min-width: 768px){
+    .container{
+        width: 45%;
+        padding: 40px 0;
+    }
+    
+    .formulário{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .container{
+        width: 45%;
+        padding: 40px 0;
+    }
+    
+    .formulário{
+        width: 60%;
+    }
     
 }
