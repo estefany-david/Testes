@@ -1,6 +1,6 @@
 /* Aqui no root conseguimos definir variáveis e usar como cores, aí quando você quiser fazer um tema escuro fica mais fácil */
 :root{
-    --cor-principal: #7C623F;
+    --cor-principal: #44290960;
     --cor-de-contraste: #fff;
     }
 
@@ -33,7 +33,9 @@ a{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-
+    
+    
+    
     /* Aqui a gente vai deixar a imagem de fundo ocupando toda a tela, então vamos usar as medidas de largura e altura da tela do usuário, lembra que colocamos 100vh e vw no body? Pois é, como ele é pai desta div podemos usar 100% na largura e altura aqui para elas terem a mesma do pai. */
     width: 100%;
     height: 100%;
@@ -65,6 +67,7 @@ a{
     text-align: center;
     width: 100%;
     height: 50%;
+    
 
 }
 
@@ -79,6 +82,8 @@ a{
     border-radius: 24px;
     background-color: var(--cor-principal);
     color: var(--cor-de-contraste);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px 0 black;
 }
 
 /* Você estava usando uma classe chamada logo, eu mudei para o header só pra você ver outra aplicação mesmo */
@@ -94,6 +99,7 @@ header h1{
 
 header p{
     text-align: center;
+    margin: 0%;
 }
 
 .campo-do-formulário{
@@ -107,22 +113,46 @@ header p{
 .campo-do-formulário input{
     width: 70%;
     padding: 10px;
+    margin-bottom: 30px;
     border-radius: 24px;
     border: none;
 }
+
 
 .botão{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 5%;
 }
 
 .botão button{
     background:  var(--cor-de-contraste);
     border: none;
     border-radius: 24px;
-    padding: 15px 35px;
+    padding: 10px 35px;
+    transition: 0.2s;
+}
+
+.botão button:hover{
+    background-color: rgba(153, 115, 44, 0.63);
+    border: 3px dashed var(--cor-de-contraste);
+    color: var(--cor-de-contraste);
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 1024px){
+    .container{
+        width: 100%;
+        padding: 40px 0;
+    }
+    
+    .formulário{
+        width: 60%;
+    }
+    
 }
 
 @media screen and (min-width: 768px){
@@ -139,7 +169,7 @@ header p{
 @media screen and (min-width: 1024px){
     .container{
         width: 45%;
-        padding: 40px 0;
+        padding: 90px 0;
     }
     
     .formulário{
